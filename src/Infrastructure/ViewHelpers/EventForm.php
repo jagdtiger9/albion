@@ -1,12 +1,12 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use albion\Models\Event;
-use albion\Models\Privilege\EventPrivilege;
-use albion\Models\Repository\EventRepository;
-use albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Event;
+use Aljerom\Albion\Models\Privilege\EventPrivilege;
+use Aljerom\Albion\Models\Repository\EventRepository;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
 
 class EventForm extends AbstractViewHelper
 {

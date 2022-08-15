@@ -1,12 +1,12 @@
 <?php
 
-namespace albion\Application\QueryHandler;
+namespace Aljerom\Albion\Application\QueryHandler;
 
 use App\DomainModel\Dto\PagedResultDTO;
 use MagicPro\Messenger\Handler\MessageHandlerInterface;
-use albion\Application\Query\PlayerAchievementsQuery;
-use albion\Domain\Repository\ReadArchiveRepositoryInterface;
-use albion\Domain\Repository\ReadPlayerRepositoryInterface;
+use Aljerom\Albion\Application\Query\PlayerAchievementsQuery;
+use Aljerom\Albion\Domain\Repository\ReadArchiveRepositoryInterface;
+use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
 
 class PlayerAchievementsQueryHandler implements MessageHandlerInterface
 {

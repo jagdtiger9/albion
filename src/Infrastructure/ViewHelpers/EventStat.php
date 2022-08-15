@@ -1,17 +1,17 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use MagicPro\View\ViewHelper\AbstractViewHelper;
 use DateInterval;
 use DateTime;
 use Exception;
-use albion\Models\Event;
-use albion\Models\EventMember;
-use albion\Models\Guild;
-use albion\Models\Privilege\MemberPrivilege;
-use albion\Models\Repository\EventRepository;
-use albion\Models\EventStat as EventStatModel;
+use Aljerom\Albion\Models\Event;
+use Aljerom\Albion\Models\EventMember;
+use Aljerom\Albion\Models\Guild;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Repository\EventRepository;
+use Aljerom\Albion\Models\EventStat as EventStatModel;
 
 class EventStat extends AbstractViewHelper
 {

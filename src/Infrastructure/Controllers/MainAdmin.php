@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Infrastructure\Controllers;
+namespace Aljerom\Albion\Infrastructure\Controllers;
 
 use MagicPro\Config\Config;
 use Psr\Http\Message\ResponseInterface;

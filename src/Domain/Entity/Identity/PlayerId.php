@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Domain\Entity\Identity;
+namespace Aljerom\Albion\Domain\Entity\Identity;
 
 use MagicPro\DomainModel\Entity\Identity\UuidIdentity;
 use Webmozart\Assert\Assert;

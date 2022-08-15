@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace albion\Services;
+namespace Aljerom\Albion\Services;
 
 use MagicPro\Config\Config;
 

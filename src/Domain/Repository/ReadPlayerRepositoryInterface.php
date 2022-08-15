@@ -1,9 +1,9 @@
 <?php
 
-namespace albion\Domain\Repository;
+namespace Aljerom\Albion\Domain\Repository;
 
-use albion\Domain\Entity\ReadModel\PlayerAchievementsDTO;
-use albion\Domain\Entity\ReadModel\PlayerDTO;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerAchievementsDTO;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerDTO;
 use sessauth\Domain\Models\User;
 
 interface ReadPlayerRepositoryInterface

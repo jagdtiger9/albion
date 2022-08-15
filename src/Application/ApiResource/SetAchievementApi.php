@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Application\ApiResource;
+namespace Aljerom\Albion\Application\ApiResource;
 
 use App\Api\AbstractApiResource;
 use MagicPro\Messenger\Validation\ValidatedMessageInterface;
-use albion\Application\Command\SetAchievementCommand;
+use Aljerom\Albion\Application\Command\SetAchievementCommand;
 use Psr\Http\Message\ServerRequestInterface;
 
 class SetAchievementApi extends AbstractApiResource

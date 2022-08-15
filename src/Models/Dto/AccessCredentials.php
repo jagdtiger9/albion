@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Models\Dto;
+namespace Aljerom\Albion\Models\Dto;
 
 use MagicPro\DomainModel\Dto\Dto;
 

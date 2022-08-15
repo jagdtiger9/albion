@@ -1,6 +1,6 @@
 <?php
 
-namespace albion;
+namespace Aljerom\Albion;
 
 use MagicPro\PluginModules\Module\AbstractModule;
 
@@ -11,8 +11,18 @@ class AlbionModule extends AbstractModule
         return __DIR__;
     }
 
+    public function getName(): string
+    {
+        return 'albion';
+    }
+
     public function getTitle(): string
     {
         return 'Альбион';
+    }
+
+    public function getIconPath(): string
+    {
+        return realpath($this->modulePath . '/../' . AbstractModule::MODULE_ICON);
     }
 }

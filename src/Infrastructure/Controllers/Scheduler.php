@@ -1,14 +1,14 @@
 <?php
 
-namespace albion\Infrastructure\Controllers;
+namespace Aljerom\Albion\Infrastructure\Controllers;
 
 use Exception;
 use MagicPro\Config\Config;
-use albion\Services\DiscordRegistration;
+use Aljerom\Albion\Services\DiscordRegistration;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use MagicPro\Application\Controller;
-use albion\Services\AlbionImport;
+use Aljerom\Albion\Services\AlbionImport;
 
 class Scheduler extends Controller
 {

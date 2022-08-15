@@ -1,11 +1,11 @@
 <?php
 
-namespace albion\Application\QueryHandler;
+namespace Aljerom\Albion\Application\QueryHandler;
 
 use App\DomainModel\Dto\PagedResultDTO;
 use MagicPro\Messenger\Handler\MessageHandlerInterface;
-use albion\Application\Query\AwardListQuery;
-use albion\Domain\Repository\ReadPlayerRepositoryInterface;
+use Aljerom\Albion\Application\Query\AwardListQuery;
+use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
 
 class AwardListQueryHandler implements MessageHandlerInterface
 {

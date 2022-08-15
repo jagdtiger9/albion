@@ -1,14 +1,14 @@
 <?php
 
-namespace albion\Models\Repository;
+namespace Aljerom\Albion\Models\Repository;
 
 use MagicPro\Database\Model\Model;
 use MagicPro\Database\Model\Repository\Repository;
-use albion\Domain\Exception\AlbionException;
-use albion\Models\Event;
-use albion\Models\EventMember;
-use albion\Models\Guild;
-use albion\Models\Member;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Models\Event;
+use Aljerom\Albion\Models\EventMember;
+use Aljerom\Albion\Models\Guild;
+use Aljerom\Albion\Models\Member;
 
 class EventRepository extends Repository
 {

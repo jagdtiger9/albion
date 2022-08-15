@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Domain\Entity;
+namespace Aljerom\Albion\Domain\Entity;
 
 use App\DomainModel\Identity\UserId;
 use MagicPro\DomainModel\Entity\AggregateRoot;
-use albion\Domain\Entity\Identity\RewardSnapshotId;
+use Aljerom\Albion\Domain\Entity\Identity\RewardSnapshotId;
 
 class RewardSnapshot extends AggregateRoot
 {

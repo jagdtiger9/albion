@@ -1,13 +1,13 @@
 <?php
 
-use albion\Domain\Repository\PlayerRepositoryInterface;
-use albion\Domain\Repository\PlayerRewardRepositoryInterface;
-use albion\Domain\Repository\ReadArchiveRepositoryInterface;
-use albion\Domain\Repository\ReadPlayerRepositoryInterface;
-use albion\Infrastructure\Persistence\CycleORM\PlayerRepository;
-use albion\Infrastructure\Persistence\CycleORM\PlayerRewardRepository;
-use albion\Infrastructure\Persistence\MySQL\ReadArchiveRepository;
-use albion\Infrastructure\Persistence\MySQL\ReadPlayerRepository;
+use Aljerom\Albion\Domain\Repository\PlayerRepositoryInterface;
+use Aljerom\Albion\Domain\Repository\PlayerRewardRepositoryInterface;
+use Aljerom\Albion\Domain\Repository\ReadArchiveRepositoryInterface;
+use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
+use Aljerom\Albion\Infrastructure\Persistence\CycleORM\PlayerRepository;
+use Aljerom\Albion\Infrastructure\Persistence\CycleORM\PlayerRewardRepository;
+use Aljerom\Albion\Infrastructure\Persistence\MySQL\ReadArchiveRepository;
+use Aljerom\Albion\Infrastructure\Persistence\MySQL\ReadPlayerRepository;
 
 return [
     ReadPlayerRepositoryInterface::class => ReadPlayerRepository::class,

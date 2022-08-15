@@ -1,12 +1,12 @@
 <?php
 
-namespace albion\Application\Command;
+namespace Aljerom\Albion\Application\Command;
 
 use MagicPro\Messenger\Message\CommandInterface;
 use MagicPro\Messenger\Validation\MessageValidationInterface;
 use MagicPro\Messenger\Validation\MessageValidationTrait;
 use MagicPro\DomainModel\Dto\SimpleDto;
-use albion\Application\CommandHandler\CreateSnapshotCommandHandler;
+use Aljerom\Albion\Application\CommandHandler\CreateSnapshotCommandHandler;
 
 class CreateSnapshotCommand extends SimpleDto implements CommandInterface, MessageValidationInterface
 {

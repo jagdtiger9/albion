@@ -1,6 +1,6 @@
 <?php
 
-use albion\Infrastructure\Controllers\Scheduler;
+use Aljerom\Albion\Infrastructure\Controllers\Scheduler;
 
 return [
     'importUsers' => [

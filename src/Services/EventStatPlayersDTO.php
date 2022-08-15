@@ -1,5 +1,6 @@
 <?php
-namespace albion\Services;
+
+namespace Aljerom\Albion\Services;
 
 use MagicPro\DomainModel\Dto\SimpleDto;
 

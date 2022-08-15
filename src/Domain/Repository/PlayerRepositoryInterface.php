@@ -1,9 +1,9 @@
 <?php
 
-namespace albion\Domain\Repository;
+namespace Aljerom\Albion\Domain\Repository;
 
-use albion\Domain\Entity\Identity\PlayerId;
-use albion\Domain\Entity\Player;
+use Aljerom\Albion\Domain\Entity\Identity\PlayerId;
+use Aljerom\Albion\Domain\Entity\Player;
 
 interface PlayerRepositoryInterface
 {

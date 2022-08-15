@@ -1,9 +1,9 @@
 <?php
 
-namespace albion\Domain\Repository;
+namespace Aljerom\Albion\Domain\Repository;
 
-use albion\Domain\Entity\Identity\DiscordId;
-use albion\Domain\Entity\PlayerReward;
+use Aljerom\Albion\Domain\Entity\Identity\DiscordId;
+use Aljerom\Albion\Domain\Entity\PlayerReward;
 
 interface PlayerRewardRepositoryInterface
 {

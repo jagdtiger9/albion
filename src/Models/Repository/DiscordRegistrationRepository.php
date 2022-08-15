@@ -1,9 +1,9 @@
 <?php
 
-namespace albion\Models\Repository;
+namespace Aljerom\Albion\Models\Repository;
 
 use MagicPro\Database\Model\Repository\Repository;
-use albion\Models\DiscordRegistration;
+use Aljerom\Albion\Models\DiscordRegistration;
 
 class DiscordRegistrationRepository extends Repository
 {

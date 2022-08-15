@@ -1,13 +1,13 @@
 <?php
 
-namespace albion\Infrastructure\Persistence\MySQL;
+namespace Aljerom\Albion\Infrastructure\Persistence\MySQL;
 
 use MagicPro\Contracts\Database\DatabaseNewInterface;
-use albion\Domain\Entity\ReadModel\GuildDTO;
-use albion\Domain\Entity\ReadModel\PlayerDTO;
-use albion\Domain\Repository\ReadPlayerRepositoryInterface;
-use albion\Domain\Entity\ReadModel\PlayerAchievementsDTO;
-use albion\Domain\Entity\ReadModel\PlayerRolesDTO;
+use Aljerom\Albion\Domain\Entity\ReadModel\GuildDTO;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerDTO;
+use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerAchievementsDTO;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerRolesDTO;
 use sessauth\Domain\Models\User;
 
 class ReadPlayerRepository implements ReadPlayerRepositoryInterface

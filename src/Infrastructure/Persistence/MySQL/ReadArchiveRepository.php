@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Infrastructure\Persistence\MySQL;
+namespace Aljerom\Albion\Infrastructure\Persistence\MySQL;
 
 use DateTime;
 use MagicPro\Contracts\Database\DatabaseNewInterface;
-use albion\Domain\Repository\ReadArchiveRepositoryInterface;
+use Aljerom\Albion\Domain\Repository\ReadArchiveRepositoryInterface;
 
 class ReadArchiveRepository implements ReadArchiveRepositoryInterface
 {

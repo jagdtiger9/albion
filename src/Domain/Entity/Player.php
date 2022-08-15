@@ -1,13 +1,13 @@
 <?php
 
-namespace albion\Domain\Entity;
+namespace Aljerom\Albion\Domain\Entity;
 
 use MagicPro\DomainModel\Entity\AggregateRoot;
 use payment\Domain\Entity\ValueObject\GuildName;
 use payment\Domain\Entity\ValueObject\PlayerFame;
 use payment\Domain\Entity\ValueObject\PlayerName;
-use albion\Domain\Entity\Identity\DiscordId;
-use albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Domain\Entity\Identity\DiscordId;
+use Aljerom\Albion\Domain\Exception\AlbionException;
 
 class Player extends AggregateRoot
 {

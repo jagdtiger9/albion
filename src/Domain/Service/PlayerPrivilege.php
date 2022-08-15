@@ -1,11 +1,11 @@
 <?php
 
-namespace albion\Domain\Service;
+namespace Aljerom\Albion\Domain\Service;
 
 use MagicPro\Contracts\User\CurrentUserInterface;
-use albion\Domain\Entity\ReadModel\PlayerDTO;
-use albion\Domain\Exception\AlbionException;
-use albion\Domain\Repository\ReadPlayerRepositoryInterface;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerDTO;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
 use sessauth\Domain\Models\User;
 
 class PlayerPrivilege

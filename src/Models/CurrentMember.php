@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Models;
+namespace Aljerom\Albion\Models;
 
 use MagicPro\Contracts\User\CurrentUserInterface;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 
 class CurrentMember
 {

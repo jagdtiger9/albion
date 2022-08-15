@@ -12,7 +12,7 @@
  */
 
 use dumpsite\Models\Dump;
-use albion\Models\EventMember;
+use Aljerom\Albion\Models\EventMember;
 
 $sql = " CREATE TABLE IF NOT EXISTS `albion__guilds` (
   `id` varchar(255) NOT NULL default '' COMMENT 'Идентификатор гильдии',

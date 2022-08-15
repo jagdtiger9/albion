@@ -1,13 +1,13 @@
 <?php
 
-namespace albion\Application\Command;
+namespace Aljerom\Albion\Application\Command;
 
 use MagicPro\Messenger\Message\CommandInterface;
 use MagicPro\Messenger\Validation\MessageValidationInterface;
 use MagicPro\Messenger\Validation\MessageValidationTrait;
 use MagicPro\DomainModel\Dto\SimpleDto;
 use payment\Domain\Entity\ValueObject\Award;
-use albion\Application\CommandHandler\SetAchievementCommandHandler;
+use Aljerom\Albion\Application\CommandHandler\SetAchievementCommandHandler;
 
 class SetAchievementCommand extends SimpleDto implements CommandInterface, MessageValidationInterface
 {

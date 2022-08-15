@@ -1,13 +1,13 @@
 <?php
 
-namespace albion\Models\Repository;
+namespace Aljerom\Albion\Models\Repository;
 
 use MagicPro\Database\Model\Model;
 use MagicPro\Database\Model\Repository\Repository;
 use MagicPro\Database\Query\Raw;
-use albion\Models\Event;
-use albion\Models\EventMember;
-use albion\Models\Member;
+use Aljerom\Albion\Models\Event;
+use Aljerom\Albion\Models\EventMember;
+use Aljerom\Albion\Models\Member;
 
 class EventMemberRepository extends Repository
 {

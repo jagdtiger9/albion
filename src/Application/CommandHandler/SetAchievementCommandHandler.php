@@ -1,17 +1,17 @@
 <?php
 
-namespace albion\Application\CommandHandler;
+namespace Aljerom\Albion\Application\CommandHandler;
 
 use InvalidArgumentException;
 use MagicPro\Messenger\Handler\MessageHandlerInterface;
 use payment\Domain\Entity\ValueObject\Award;
-use albion\Application\Command\SetAchievementCommand;
-use albion\Domain\Entity\Identity\PlayerId;
-use albion\Domain\Entity\PlayerReward;
-use albion\Domain\Exception\AlbionException;
-use albion\Domain\Repository\PlayerRepositoryInterface;
-use albion\Domain\Repository\PlayerRewardRepositoryInterface;
-use albion\Domain\Service\PlayerPrivilege;
+use Aljerom\Albion\Application\Command\SetAchievementCommand;
+use Aljerom\Albion\Domain\Entity\Identity\PlayerId;
+use Aljerom\Albion\Domain\Entity\PlayerReward;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Domain\Repository\PlayerRepositoryInterface;
+use Aljerom\Albion\Domain\Repository\PlayerRewardRepositoryInterface;
+use Aljerom\Albion\Domain\Service\PlayerPrivilege;
 
 class SetAchievementCommandHandler implements MessageHandlerInterface
 {

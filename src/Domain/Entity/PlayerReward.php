@@ -1,11 +1,11 @@
 <?php
 
-namespace albion\Domain\Entity;
+namespace Aljerom\Albion\Domain\Entity;
 
 use MagicPro\DomainModel\Entity\AggregateRoot;
 use payment\Domain\Entity\ValueObject\Award;
-use albion\Domain\Entity\Identity\DiscordId;
-use albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Domain\Entity\Identity\DiscordId;
+use Aljerom\Albion\Domain\Exception\AlbionException;
 
 class PlayerReward extends AggregateRoot
 {

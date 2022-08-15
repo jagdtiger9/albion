@@ -1,15 +1,15 @@
 <?php
 
-namespace albion\Services;
+namespace Aljerom\Albion\Services;
 
 use InvalidArgumentException;
 use MagicPro\Config\Config;
-use albion\Domain\Exception\AlbionException;
-use albion\Models\Dto\AccessCredentials;
-use albion\Models\Member;
-use albion\Models\Privilege\MemberPrivilege;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Models\Dto\AccessCredentials;
+use Aljerom\Albion\Models\Member;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 use RestCord\DiscordClient;
 use RuntimeException;
 use sessauth\Domain\Models\User;

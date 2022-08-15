@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Infrastructure\Controllers;
+namespace Aljerom\Albion\Infrastructure\Controllers;
 
 use MagicPro\Http\Api\ErrorResponse;
 use MagicPro\Http\Api\SuccessResponse;
@@ -10,8 +10,8 @@ use MagicPro\Application\Controller;
 use MagicPro\Database\Exception\DbException;
 use Exception;
 use InvalidArgumentException;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 use sessauth\Domain\Models\User;
 use sessauth\Services\UserRemove;
 

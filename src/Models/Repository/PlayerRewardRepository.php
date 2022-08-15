@@ -1,9 +1,9 @@
 <?php
 
-namespace albion\Models\Repository;
+namespace Aljerom\Albion\Models\Repository;
 
 use MagicPro\Database\Model\Repository\Repository;
-use albion\Models\PlayerReward;
+use Aljerom\Albion\Models\PlayerReward;
 
 class PlayerRewardRepository extends Repository
 {

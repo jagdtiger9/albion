@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Domain\Entity\ValueObject;
+namespace Aljerom\Albion\Domain\Entity\ValueObject;
 
 class PlayerName
 {

@@ -1,17 +1,17 @@
 <?php
 
-namespace albion\Services;
+namespace Aljerom\Albion\Services;
 
 use DateInterval;
 use DateTime;
 use Exception;
-use albion\Domain\Exception\AlbionException;
-use albion\Models\Member;
-use albion\Models\Privilege\MemberPrivilege;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Repository\MemberArchiveRepository;
-use albion\Models\Repository\MemberDailyRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Models\Member;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberArchiveRepository;
+use Aljerom\Albion\Models\Repository\MemberDailyRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 
 class GuildPlayer
 {

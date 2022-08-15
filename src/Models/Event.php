@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Models;
+namespace Aljerom\Albion\Models;
 
 use MagicPro\Database\Model\Model;
 use MagicPro\Tools\Uuid;
-use albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Domain\Exception\AlbionException;
 
 class Event extends Model
 {

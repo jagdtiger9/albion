@@ -1,9 +1,9 @@
 <?php
 
-namespace albion\Models\Privilege;
+namespace Aljerom\Albion\Models\Privilege;
 
-use albion\Models\Event;
-use albion\Models\Member;
+use Aljerom\Albion\Models\Event;
+use Aljerom\Albion\Models\Member;
 
 class EventPrivilege extends MemberPrivilege
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace albion\Domain\Entity\ValueObject;
+namespace Aljerom\Albion\Domain\Entity\ValueObject;
 
-use albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Domain\Exception\AlbionException;
 
 class Award
 {

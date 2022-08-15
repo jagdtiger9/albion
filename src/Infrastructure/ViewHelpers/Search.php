@@ -1,12 +1,12 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use albion\Models\Guild;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Repository\MemberRepository;
-use albion\Services\AlbionApi;
+use Aljerom\Albion\Models\Guild;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Services\AlbionApi;
 
 class Search extends AbstractViewHelper
 {

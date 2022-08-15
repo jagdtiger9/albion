@@ -1,13 +1,13 @@
 <?php
 
-namespace albion\Application\Query;
+namespace Aljerom\Albion\Application\Query;
 
 use App\DomainModel\Dto\PaginatorDto;
 use MagicPro\Messenger\Message\QueryInterface;
 use MagicPro\Messenger\Validation\MessageValidationInterface;
 use MagicPro\Messenger\Validation\MessageValidationTrait;
 use MagicPro\DomainModel\Dto\SimpleDto;
-use albion\Application\QueryHandler\AwardListQueryHandler;
+use Aljerom\Albion\Application\QueryHandler\AwardListQueryHandler;
 
 class AwardListQuery extends SimpleDto implements QueryInterface, MessageValidationInterface
 {

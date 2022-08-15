@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Services;
+namespace Aljerom\Albion\Services;
 
 use GuzzleHttp\RequestOptions;
 use MagicPro\Config\Config;

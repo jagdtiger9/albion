@@ -1,11 +1,11 @@
 <?php
 
-namespace albion\Infrastructure\Persistence\CycleORM;
+namespace Aljerom\Albion\Infrastructure\Persistence\CycleORM;
 
 use MagicPro\DomainModel\Repository\CycleORM\CycleORMRepository;
-use albion\Domain\Entity\Identity\DiscordId;
-use albion\Domain\Entity\PlayerReward;
-use albion\Domain\Repository\PlayerRewardRepositoryInterface;
+use Aljerom\Albion\Domain\Entity\Identity\DiscordId;
+use Aljerom\Albion\Domain\Entity\PlayerReward;
+use Aljerom\Albion\Domain\Repository\PlayerRewardRepositoryInterface;
 
 class PlayerRewardRepository extends CycleORMRepository implements PlayerRewardRepositoryInterface
 {

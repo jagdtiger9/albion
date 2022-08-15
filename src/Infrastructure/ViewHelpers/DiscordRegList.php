@@ -1,12 +1,12 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use albion\Models\Repository\DiscordRegistrationRepository;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Privilege\MemberPrivilege;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Models\Repository\DiscordRegistrationRepository;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 
 class DiscordRegList extends AbstractViewHelper
 {

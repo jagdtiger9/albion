@@ -1,14 +1,14 @@
 <?php
 
-namespace albion\Models\Repository;
+namespace Aljerom\Albion\Models\Repository;
 
 use MagicPro\Database\Model\Repository\Repository;
 use DateTime;
 use Exception;
 use MagicPro\Database\Query\Raw;
-use albion\Models\Guild;
-use albion\Models\Member;
-use albion\Models\MemberArchive;
+use Aljerom\Albion\Models\Guild;
+use Aljerom\Albion\Models\Member;
+use Aljerom\Albion\Models\MemberArchive;
 
 class MemberArchiveRepository extends Repository
 {

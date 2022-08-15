@@ -1,11 +1,11 @@
 <?php
 
-namespace albion\Application\ApiResource;
+namespace Aljerom\Albion\Application\ApiResource;
 
 use MagicPro\Messenger\Validation\ValidatedMessageInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use App\Api\AbstractApiResource;
-use albion\Application\Query\PlayerAchievementsQuery;
+use Aljerom\Albion\Application\Query\PlayerAchievementsQuery;
 
 class PlayerAchievementsApi extends AbstractApiResource
 {

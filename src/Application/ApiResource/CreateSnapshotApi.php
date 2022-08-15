@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Application\ApiResource;
+namespace Aljerom\Albion\Application\ApiResource;
 
 use App\Api\AbstractApiResource;
 use MagicPro\Messenger\Validation\ValidatedMessageInterface;
-use albion\Application\Command\CreateSnapshotCommand;
+use Aljerom\Albion\Application\Command\CreateSnapshotCommand;
 use Psr\Http\Message\ServerRequestInterface;
 
 class CreateSnapshotApi extends AbstractApiResource

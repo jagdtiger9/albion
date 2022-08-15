@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 
 class ModeratorInfo extends AbstractViewHelper
 {

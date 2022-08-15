@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Domain\Repository;
+namespace Aljerom\Albion\Domain\Repository;
 
 interface ReadArchiveRepositoryInterface
 {

@@ -1,19 +1,19 @@
 <?php
 
-namespace albion\Services;
+namespace Aljerom\Albion\Services;
 
 use Exception;
 use GuzzleHttp\Command\Exception\CommandClientException;
 use InvalidArgumentException;
 use MagicPro\Config\Config;
-use albion\Domain\Exception\AlbionException;
-use albion\Models\Member;
-use albion\Models\MemberRoles;
-use albion\Models\Privilege\MemberPrivilege;
-use albion\Models\Repository\DiscordRegistrationRepository;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Repository\LoginHashRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Models\Member;
+use Aljerom\Albion\Models\MemberRoles;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Repository\DiscordRegistrationRepository;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\LoginHashRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 use RestCord\DiscordClient;
 use sessauth\Domain\Models\Repository\UserRepository;
 use sessauth\Domain\Models\User;

@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Models;
+namespace Aljerom\Albion\Models;
 
 use MagicPro\Database\Model\Model;
 use sessauth\Domain\Models\User;

@@ -1,11 +1,11 @@
 <?php
 
-namespace albion\Infrastructure\Persistence\CycleORM;
+namespace Aljerom\Albion\Infrastructure\Persistence\CycleORM;
 
 use MagicPro\DomainModel\Repository\CycleORM\CycleORMRepository;
-use albion\Domain\Entity\Identity\PlayerId;
-use albion\Domain\Entity\Player;
-use albion\Domain\Repository\PlayerRepositoryInterface;
+use Aljerom\Albion\Domain\Entity\Identity\PlayerId;
+use Aljerom\Albion\Domain\Entity\Player;
+use Aljerom\Albion\Domain\Repository\PlayerRepositoryInterface;
 
 class PlayerRepository extends CycleORMRepository implements PlayerRepositoryInterface
 {

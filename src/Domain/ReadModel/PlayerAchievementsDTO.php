@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Domain\ReadModel;
+namespace Aljerom\Albion\Domain\ReadModel;
 
 use MagicPro\DomainModel\Dto\SimpleDto;
 use payment\Domain\Entity\ValueObject\Award;

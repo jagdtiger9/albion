@@ -1,12 +1,12 @@
 <?php
 
-namespace albion\Services;
+namespace Aljerom\Albion\Services;
 
 use InvalidArgumentException;
-use albion\Domain\Exception\AlbionException;
-use albion\Models\Member;
-use albion\Models\Privilege\MemberPrivilege;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Models\Member;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 
 class MemberInGameStat
 {

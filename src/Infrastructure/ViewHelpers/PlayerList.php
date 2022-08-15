@@ -1,11 +1,11 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use MagicPro\Contracts\Session\FlashInterface;
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use albion\Domain\Exception\AlbionException;
-use albion\Services\GuildPlayer;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Services\GuildPlayer;
 use function app;
 
 class PlayerList extends AbstractViewHelper

@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Application\CommandHandler;
+namespace Aljerom\Albion\Application\CommandHandler;
 
 use App\DomainModel\ValueObject\Price;
 use MagicPro\Contracts\Session\SessionInterface;
@@ -18,7 +18,7 @@ use payment\Domain\Exception\PaymentException;
 use payment\Domain\Repository\OrderRepositoryInterface;
 use payment\Domain\Repository\PackageRepositoryInterface;
 use payment\Domain\Repository\PromoOfferRepositoryInterface;
-use albion\Application\Command\CreateSnapshotCommand;
+use Aljerom\Albion\Application\Command\CreateSnapshotCommand;
 
 class CreateSnapshotCommandHandler implements MessageHandlerInterface
 {

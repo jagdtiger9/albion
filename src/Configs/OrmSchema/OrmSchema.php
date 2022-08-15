@@ -2,8 +2,8 @@
 
 use Cycle\ORM\Mapper\Mapper;
 use Cycle\ORM\Schema;
-use albion\Domain\Entity\Player;
-use albion\Domain\Entity\PlayerReward;
+use Aljerom\Albion\Domain\Entity\Player;
+use Aljerom\Albion\Domain\Entity\PlayerReward;
 
 /**
  * Primary_KEY uuid, если сделать uid, то не работает добавление нового агрегата PackagePayment с добавлением

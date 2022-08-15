@@ -1,14 +1,14 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use albion\Models\Event;
-use albion\Models\EventMember;
-use albion\Models\Guild;
-use albion\Models\Privilege\EventPrivilege;
-use albion\Models\Repository\EventMemberRepository;
-use albion\Models\Repository\EventRepository;
+use Aljerom\Albion\Models\Event;
+use Aljerom\Albion\Models\EventMember;
+use Aljerom\Albion\Models\Guild;
+use Aljerom\Albion\Models\Privilege\EventPrivilege;
+use Aljerom\Albion\Models\Repository\EventMemberRepository;
+use Aljerom\Albion\Models\Repository\EventRepository;
 
 class EventInfo extends AbstractViewHelper
 {

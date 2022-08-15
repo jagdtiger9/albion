@@ -1,11 +1,11 @@
 <?php
 
-namespace albion\Models\Repository;
+namespace Aljerom\Albion\Models\Repository;
 
 use MagicPro\Database\Model\Repository\Repository;
 use DateTime;
-use albion\Models\Guild;
-use albion\Models\Member;
+use Aljerom\Albion\Models\Guild;
+use Aljerom\Albion\Models\Member;
 
 class MemberRepository extends Repository
 {

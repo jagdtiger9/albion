@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Models\Privilege;
+namespace Aljerom\Albion\Models\Privilege;
 
-use albion\Models\CurrentMember;
-use albion\Models\Guild;
-use albion\Models\Member;
+use Aljerom\Albion\Models\CurrentMember;
+use Aljerom\Albion\Models\Guild;
+use Aljerom\Albion\Models\Member;
 use sessauth\Domain\Models\User;
 
 class MemberPrivilege

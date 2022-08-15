@@ -1,6 +1,6 @@
 <?php
 
-namespace albion\Domain\Exception;
+namespace Aljerom\Albion\Domain\Exception;
 
 use Exception;
 

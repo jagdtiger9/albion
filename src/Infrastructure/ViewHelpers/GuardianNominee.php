@@ -1,12 +1,12 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use DateTime;
 use Exception;
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\GuardianNominee as GuardianNomineeModel;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\GuardianNominee as GuardianNomineeModel;
 
 class GuardianNominee extends AbstractViewHelper
 {

@@ -1,12 +1,12 @@
 <?php
 
-use albion\Application\ApiResource\AwardListApi;
-use albion\Application\ApiResource\CreateSnapshotApi;
-use albion\Application\ApiResource\PlayerAchievementsApi;
-use albion\Application\ApiResource\SetAchievementApi;
-use albion\Infrastructure\Controllers\WebApi;
-use albion\Models\Event;
-use albion\Models\Member;
+use Aljerom\Albion\Application\ApiResource\AwardListApi;
+use Aljerom\Albion\Application\ApiResource\CreateSnapshotApi;
+use Aljerom\Albion\Application\ApiResource\PlayerAchievementsApi;
+use Aljerom\Albion\Application\ApiResource\SetAchievementApi;
+use Aljerom\Albion\Infrastructure\Controllers\WebApi;
+use Aljerom\Albion\Models\Event;
+use Aljerom\Albion\Models\Member;
 
 return [
     'POST:createSnapshot' => [

@@ -1,15 +1,15 @@
 <?php
 
-namespace albion\Services;
+namespace Aljerom\Albion\Services;
 
-use albion\Domain\Exception\AlbionException;
-use albion\Models\Event;
-use albion\Models\EventMember;
-use albion\Models\Guild;
-use albion\Models\Privilege\EventPrivilege;
-use albion\Models\Repository\EventMemberRepository;
-use albion\Models\Repository\EventRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Domain\Exception\AlbionException;
+use Aljerom\Albion\Models\Event;
+use Aljerom\Albion\Models\EventMember;
+use Aljerom\Albion\Models\Guild;
+use Aljerom\Albion\Models\Privilege\EventPrivilege;
+use Aljerom\Albion\Models\Repository\EventMemberRepository;
+use Aljerom\Albion\Models\Repository\EventRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 
 class EventMemberRegistration
 {

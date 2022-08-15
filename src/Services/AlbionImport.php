@@ -1,18 +1,18 @@
 <?php
 
-namespace albion\Services;
+namespace Aljerom\Albion\Services;
 
 use MagicPro\Database\Query\Raw;
 use DateTime;
-use albion\Models\GuildMember;
-use albion\Models\Member;
-use albion\Models\MemberArchive;
-use albion\Models\MemberArchiveTmp;
-use albion\Models\MemberDaily;
-use albion\Models\Repository\GuildRepository;
-use albion\Models\Repository\MemberArchiveRepository;
-use albion\Models\Repository\MemberDailyRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Models\GuildMember;
+use Aljerom\Albion\Models\Member;
+use Aljerom\Albion\Models\MemberArchive;
+use Aljerom\Albion\Models\MemberArchiveTmp;
+use Aljerom\Albion\Models\MemberDaily;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberArchiveRepository;
+use Aljerom\Albion\Models\Repository\MemberDailyRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 
 class AlbionImport
 {

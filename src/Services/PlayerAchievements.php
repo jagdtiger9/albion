@@ -1,10 +1,11 @@
 <?php
-namespace albion\Services;
+
+namespace Aljerom\Albion\Services;
 
 use App\DomainModel\Dto\PaginatorDto;
-use albion\Domain\Entity\ReadModel\PlayerAchievementsDTO;
-use albion\Domain\Entity\ReadModel\PlayerRolesDTO;
-use albion\Models\PlayerReward;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerAchievementsDTO;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerRolesDTO;
+use Aljerom\Albion\Models\PlayerReward;
 
 class PlayerAchievements
 {

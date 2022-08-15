@@ -1,9 +1,9 @@
 <?php
 
-namespace albion\Models;
+namespace Aljerom\Albion\Models;
 
-use albion\Models\Repository\MemberArchiveRepository;
-use albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Models\Repository\MemberArchiveRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
 
 class GuardianNominee
 {

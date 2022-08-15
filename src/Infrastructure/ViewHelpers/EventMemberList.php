@@ -1,10 +1,10 @@
 <?php
 
-namespace albion\Infrastructure\ViewHelpers;
+namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use albion\Models\EventMember;
-use albion\Models\Repository\EventMemberRepository;
+use Aljerom\Albion\Models\EventMember;
+use Aljerom\Albion\Models\Repository\EventMemberRepository;
 
 class EventMemberList extends AbstractViewHelper
 {
