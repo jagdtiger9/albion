@@ -1,0 +1,42 @@
+<h2>Список гильдий</h2>
+{{ call({
+    "module": "albion",
+    "function": "GuildList",
+    "template": "@tpl",
+    "cache": false,
+    "params": {}
+}) }}
+{[tpl]}
+{% if(Var.list) %}
+    <table class="table table-striped table-hover table-bordered">
+        <thead>
+        <tr class="info text-center">
+            <th>ID</th>
+            <th>Название</th>
+            <th>Основатель</th>
+            <th>Дата создания</th>
+            <th>Участники</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% foreach(Var.list as guild) %}
+            <tr class="text-center">
+                <td>{{ guild.id }}</td>
+                <td>
+                    <a href="/members?guild={{ guild.id }}" title="Участники гильдии">{{ guild.name }}</a>
+                </td>
+                <td><a href="/player?uid={{ guild.founderId }} "
+                       title="Информация о пользователе">{{ guild.founderName }}</a></td>
+                <td>{{ date('d.m.y H:i:s', guild.founded) }}</td>
+                <td>
+                    <a href="/members?guild={{ guild.id }}"
+                       title="Участники гильдии">{{ guild.memberCount }}</a>
+                </td>
+            </tr>
+        {% endforeach %}
+        </tbody>
+    </table>
+{% else %}
+    <h3>Список гильдий не сформирован</h3>
+{% endif %}
+{[/tpl]}

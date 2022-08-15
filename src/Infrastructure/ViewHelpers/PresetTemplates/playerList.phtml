@@ -1,0 +1,175 @@
+{% if(Get.export === 'csv') %}
+{% setContentType('CSV') %}
+{{ call({
+    "module": "albion",
+    "function": "PlayerList",
+    "template": "@csv",
+    "cache": false,
+    "params": {
+        "guildId":"9ovaHeVdS0KvvGnpz-uT3w",
+        "page":Get.p,
+        "perPage":100,
+        "sort":default(Get.sort, "name"),
+        "order":default(Get.order, "asc")
+    }
+}) }}
+{[csv]}
+Имя,Kill Fame,Death Fame,PvE Fame,Craft Fame,Gather Fame,Fiber,Hide,Ore,Rock,Wood,Время обновления
+{% foreach(Var.list as member) %}
+{{ member.name }},{{ member.killFame }},{{ member.deathFame }},{{ member.pveTotal }},{{ member.craftingTotal }},{{ member.gatheringTotal }},{{ member.fiberTotal }},{{ member.hideTotal }},{{ member.oreTotal }},{{ member.rockTotal }},{{ member.woodTotal }},{% if(member.timestamp) %}{{ date('d.m.y H:i:s', member.timestamp) }}{% endif %},
+
+{% endforeach %}
+{[/csv]}
+{% return() %}
+{% endif %}
+
+{% setLayout('albion_layout') %}
+{{ call({
+    "module": "albion",
+    "function": "PlayerList",
+    "template": "@tpl",
+    "cache": false,
+    "params": {
+        "guildId":"9ovaHeVdS0KvvGnpz-uT3w",
+        "page":Get.p,
+        "perPage":100,
+        "sort":default(Get.sort, "name"),
+        "order":default(Get.order, "asc")
+    }
+}) }}
+{[tpl]}
+{% if(Var.list) %}
+{% set Var.baseUrl = '/' . Get.an . '?guild=' . Input.guildId  %}
+<h2>Список участников гильдии {{ Var.guild.name }}</h2>
+<div class="float-right">
+    <a href="{{ Env.request_uri }}&export=csv" title="При сохранении в файл, добавьте расширение .csv"><i class="far fa-file-excel fa-2x text-primary"></i></a>
+</div>
+{{ call({
+    "module":"common",
+    "function":"Pagination",
+    "template":"albion_page",
+    "cache":false,
+    "params":{"page":Var.page,"hrefCount":5,"itemPerPage":Var.perPage,"total":Var.total}
+}) }}
+<table class="table table-striped table-hover table-bordered">
+        <thead>
+        <tr class="info text-center">
+            <th class="{{ ifthen( Input.sort === 'name' , 'table-secondary' , '' ) }}">
+                <a href="{{ Var.baseUrl }}&sort=name&order={{ ifthen( Input.order === 'asc' && Input.sort === 'name', 'desc', 'asc' ) }}">Имя</a>
+                {% if(Input.sort === 'name') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'killFame' , 'table-secondary' , '' ) }}" nowrap>
+                <a href="{{ Var.baseUrl }}&sort=killFame&order={{ ifthen( Input.order === 'asc' && Input.sort === 'killFame', 'desc', 'asc' ) }}">
+                    Kill Fame</a>
+                {% if(Input.sort === 'killFame') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'deathFame' , 'table-secondary' , '' ) }}" nowrap>
+                <a href="{{ Var.baseUrl }}&sort=deathFame&order={{ ifthen( Input.order === 'asc' && Input.sort === 'deathFame', 'desc', 'asc' ) }}">
+                    Death Fame</a>
+                {% if(Input.sort === 'deathFame') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'pveTotal' , 'table-secondary' , '' ) }}" nowrap>
+                <a href="{{ Var.baseUrl }}&sort=pveTotal&order={{ ifthen( Input.order === 'asc' && Input.sort === 'pveTotal', 'desc', 'asc' ) }}">
+                    PvE Fame</a>
+                {% if(Input.sort === 'pveTotal') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'craftingTotal' , 'table-secondary' , '' ) }}" nowrap>
+                <a href="{{ Var.baseUrl }}&sort=craftingTotal&order={{ ifthen( Input.order === 'asc' && Input.sort === 'craftingTotal', 'desc', 'asc' ) }}">
+                    Craft Fame</a>
+                {% if(Input.sort === 'craftingTotal') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'gatheringTotal' , 'table-secondary' , '' ) }}" nowrap>
+                <a href="{{ Var.baseUrl }}&sort=gatheringTotal&order={{ ifthen( Input.order === 'asc' && Input.sort === 'gatheringTotal', 'desc', 'asc' ) }}">
+                    Gather Fame</a>
+                {% if(Input.sort === 'gatheringTotal') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'fiberTotal' , 'table-secondary' , '' ) }}">
+                <a href="{{ Var.baseUrl }}&sort=fiberTotal&order={{ ifthen( Input.order === 'asc' && Input.sort === 'fiberTotal', 'desc', 'asc' ) }}">
+                    Fiber</a>
+                {% if(Input.sort === 'fiberTotal') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'hideTotal' , 'table-secondary' , '' ) }}">
+                <a href="{{ Var.baseUrl }}&sort=hideTotal&order={{ ifthen( Input.order === 'asc' && Input.sort === 'hideTotal', 'desc', 'asc' ) }}">
+                    Hide</a>
+                {% if(Input.sort === 'hideTotal') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'oreTotal' , 'table-secondary' , '' ) }}">
+                <a href="{{ Var.baseUrl }}&sort=oreTotal&order={{ ifthen( Input.order === 'asc' && Input.sort === 'oreTotal', 'desc', 'asc' ) }}">
+                    Ore</a>
+                {% if(Input.sort === 'oreTotal') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'rockTotal' , 'table-secondary' , '' ) }}">
+                <a href="{{ Var.baseUrl }}&sort=rockTotal&order={{ ifthen( Input.order === 'asc' && Input.sort === 'rockTotal', 'desc', 'asc' ) }}">
+                    Rock</a>
+                {% if(Input.sort === 'rockTotal') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'woodTotal' , 'table-secondary' , '' ) }}">
+                <a href="{{ Var.baseUrl }}&sort=woodTotal&order={{ ifthen( Input.order === 'asc' && Input.sort === 'woodTotal', 'desc', 'asc' ) }}">
+                    Wood</a>
+                {% if(Input.sort === 'woodTotal') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+            <th class="{{ ifthen( Input.sort === 'timestamp' , 'table-secondary' , '' ) }}" nowrap>
+                <a href="{{ Var.baseUrl }}&sort=timestamp&order={{ ifthen( Input.order === 'asc' && Input.sort === 'timestamp', 'desc', 'asc' ) }}">
+                    Время обновления</a>
+                {% if(Input.sort === 'timestamp') %}
+                    <i class="fas fa-sort-{{ ifthen( Input.order === 'asc' , 'down' , 'up' ) }}"></i>
+                {% endif %}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% foreach(Var.list as member) %}
+            <tr class="text-center">
+                <td><a href="/player?uid={{ member.id }}" id="{{ member.id }}">{{ member.name }}</a></td>
+                <td>{{ member.killFame }}</td>
+                <td>{{ member.deathFame }}</td>
+                <td>{{ member.pveTotal }}</td>
+                <td>{{ member.craftingTotal }}</td>
+                <td>{{ member.gatheringTotal }}</td>
+                <td>{{ member.fiberTotal }}</td>
+                <td>{{ member.hideTotal }}</td>
+                <td>{{ member.oreTotal }}</td>
+                <td>{{ member.rockTotal }}</td>
+                <td>{{ member.woodTotal }}</td>
+                <td>
+                    {% if(member.timestamp) %}
+                        {{ date('d.m.y H:i:s', member.timestamp) }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endforeach %}
+        </tbody>
+    </table>
+{{ call({
+    "module":"common",
+    "function":"Pagination",
+    "template":"albion_page",
+    "cache":false,
+    "params":{"page":Var.page,"hrefCount":5,"itemPerPage":Var.perPage,"total":Var.total}
+}) }}
+{% else %}
+    <h3>Список игроков гильдии не сформирован</h3>
+{% endif %}
+{[/tpl]}

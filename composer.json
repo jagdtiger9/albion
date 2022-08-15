@@ -1,0 +1,12 @@
+{
+    "name": "aljerom/albion",
+    "license": "MIT",
+    "version": "0.0.1",
+    "type": "magicpro-package",
+    "description": "AlbionOnline",
+    "autoload": {
+        "psr-4": {
+            "Aljerom\\Albion\\": "src/"
+        }
+    }
+}
