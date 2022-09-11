@@ -1,20 +1,6 @@
 <?php
 
 return [
-    'mod_config' => [
-        // Доступность в списке модулей админки
-        'isVisible' => false,
-
-        // Наименование модуля
-        'moduleTitle' => 'Albion online',
-
-        // Список автоматически создаваемых директорий модуля, доступных для записи
-        // Каждый элемент массива - путь, относительно DOCUMENT_ROOT/vardata/modules/<moduleName>
-        'vardata' => [],
-        // Директории дампируемых данных. Каждый элемент массива - путь к директории, относительно DOCUMENT_ROOT
-        'dumpFiles' => [],
-    ],
-
     'tables' => [
         'guilds' => 'albion__guilds',
         'members' => 'albion__members',
