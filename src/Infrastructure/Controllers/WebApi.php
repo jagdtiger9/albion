@@ -155,7 +155,7 @@ class WebApi extends Controller
     public function actionResetPasswordDiscord(ServerRequestInterface $request, $id, $albionName): ResponseInterface
     {
         try {
-            $config = Config::get('common')->settings;
+            $config = Config::get('common');
             $serverName = $config->scheme . '://' . $config->SERVER_NAME;
             $memberPassword = new MemberPassword(Config::get('albion'), $serverName);
             $accessCredentials = $memberPassword->discordReset($id, $albionName);

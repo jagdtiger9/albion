@@ -29,7 +29,7 @@ class MemberPassword
 
     public function __construct(Config $config, string $serverName)
     {
-        $this->config = $config->settings;
+        $this->config = $config;
         $this->serverName = $serverName;
     }
 

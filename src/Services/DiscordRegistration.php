@@ -29,7 +29,7 @@ class DiscordRegistration
     public function __construct(Config $config)
     {
         $this->guildName = $config->guildName;
-        $this->config = $config->settings;
+        $this->config = $config;
     }
 
     /**

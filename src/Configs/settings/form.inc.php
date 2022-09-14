@@ -2,7 +2,7 @@
 
 use MagicPro\Config\Config;
 
-$settings = Config::get('albion')->settings;
+$settings = Config::get('albion');
 ?>
 <h2>Настройки "Albion online"</h2>
 
