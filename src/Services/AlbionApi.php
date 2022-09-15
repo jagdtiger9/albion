@@ -2,8 +2,8 @@
 
 namespace Aljerom\Albion\Services;
 
+use Abraham\TwitterOAuth\Config;
 use GuzzleHttp\RequestOptions;
-use MagicPro\Config\Config;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 

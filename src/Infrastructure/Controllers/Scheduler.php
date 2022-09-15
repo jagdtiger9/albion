@@ -3,8 +3,8 @@
 namespace Aljerom\Albion\Infrastructure\Controllers;
 
 use Exception;
-use MagicPro\Config\Config;
 use Aljerom\Albion\Services\DiscordRegistration;
+use MagicPro\Config\Config;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use MagicPro\Application\Controller;
