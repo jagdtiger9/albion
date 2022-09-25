@@ -23,9 +23,4 @@ class PlayerRewardRepository extends CycleORMRepository implements PlayerRewardR
 
         return $playerReward;
     }
-
-    public function save(PlayerReward $playerReward): void
-    {
-        $this->saveEntity($playerReward);
-    }
 }

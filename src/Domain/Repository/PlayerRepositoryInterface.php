@@ -12,9 +12,4 @@ interface PlayerRepositoryInterface
      * @return Player|null
      */
     public function findById(PlayerId $id): ?Player;
-
-    /**
-     * @param Player $player
-     */
-    public function save(Player $player): void;
 }

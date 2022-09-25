@@ -202,7 +202,7 @@ $sql = " CREATE TABLE IF NOT EXISTS `albion__loginHash` (
 Dump::createTable('albion__loginHash', $sql);
 
 $sql = " CREATE TABLE IF NOT EXISTS `albion__event` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `discordMessageId` varchar(255) NOT NULL default '' COMMENT 'ID сообщения дискорда',
   `linkHash` varchar(255) NOT NULL default '' COMMENT 'hash для инвайта игроков',
   `creatorId` varchar(255) NOT NULL default '' COMMENT 'Создатель, id',
@@ -227,7 +227,7 @@ $sql = " CREATE TABLE IF NOT EXISTS `albion__event` (
 Dump::createTable('albion__event', $sql);
 
 $sql = " CREATE TABLE IF NOT EXISTS `albion__eventMember` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `eventId` varchar(255) NOT NULL default '' COMMENT 'Событие, id',
   `memberId` varchar(255) NOT NULL default '' COMMENT 'Участник, id',
   `memberName` varchar(255) NOT NULL default '' COMMENT 'Участник, имя',

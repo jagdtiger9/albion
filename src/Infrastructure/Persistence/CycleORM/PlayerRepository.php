@@ -25,9 +25,4 @@ class PlayerRepository extends CycleORMRepository implements PlayerRepositoryInt
 
         return $player;
     }
-
-    public function save(Player $player): void
-    {
-        $this->saveEntity($player);
-    }
 }

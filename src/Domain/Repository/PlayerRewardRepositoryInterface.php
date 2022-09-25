@@ -12,9 +12,4 @@ interface PlayerRewardRepositoryInterface
      * @return PlayerReward|null
      */
     public function findByDiscordId(DiscordId $discordId): ?PlayerReward;
-
-    /**
-     * @param PlayerReward $playerReward
-     */
-    public function save(PlayerReward $playerReward): void;
 }

@@ -5,6 +5,7 @@ namespace Aljerom\Albion\Application\CommandHandler;
 use App\DomainModel\ValueObject\Price;
 use MagicPro\Contracts\Session\SessionInterface;
 use MagicPro\Contracts\User\CurrentUserInterface;
+use MagicPro\DomainModel\Transaction\TransactionInterface;
 use MagicPro\Messenger\Handler\MessageHandlerInterface;
 use payment\Domain\Entity\Identity\OrderUuid;
 use payment\Domain\Entity\Identity\PackageId;
@@ -22,43 +23,14 @@ use Aljerom\Albion\Application\Command\CreateSnapshotCommand;
 
 class CreateSnapshotCommandHandler implements MessageHandlerInterface
 {
-    /**
-     * @var OrderRepositoryInterface
-     */
-    private $orderRepo;
-
-    /**
-     * @var PackageRepositoryInterface
-     */
-    private $packageRepo;
-
-    /**
-     * @var PromoOfferRepositoryInterface
-     */
-    private $promoOfferRepo;
-
-    /**
-     * @var SessionInterface
-     */
-    private $session;
-
-    /**
-     * @var CurrentUserInterface
-     */
-    private $user;
-
     public function __construct(
-        SessionInterface              $session,
-        CurrentUserInterface          $user,
-        OrderRepositoryInterface      $orderRepo,
-        PackageRepositoryInterface    $packageRepo,
-        PromoOfferRepositoryInterface $promoOfferRepo,
+        private SessionInterface              $session,
+        private CurrentUserInterface          $user,
+        private OrderRepositoryInterface      $orderRepo,
+        private PackageRepositoryInterface    $packageRepo,
+        private PromoOfferRepositoryInterface $promoOfferRepo,
+        private TransactionInterface          $transaction,
     ) {
-        $this->orderRepo = $orderRepo;
-        $this->packageRepo = $packageRepo;
-        $this->promoOfferRepo = $promoOfferRepo;
-        $this->session = $session;
-        $this->user = $user;
     }
 
     /**
@@ -131,7 +103,7 @@ class CreateSnapshotCommandHandler implements MessageHandlerInterface
             $order->setPromoOffer($promoOfferId);
         }
         $order->setAddParams($command->userEmail, $command->addParam, $command->article);
-        $this->orderRepo->save($order);
+        $this->transaction->persist($order);
 
         return $order->uuid();
     }
