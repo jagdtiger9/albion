@@ -5,7 +5,7 @@ namespace Aljerom\Albion\Application\CommandHandler;
 use App\DomainModel\ValueObject\Price;
 use MagicPro\Contracts\Session\SessionInterface;
 use MagicPro\Contracts\User\CurrentUserInterface;
-use MagicPro\DomainModel\Transaction\TransactionInterface;
+use MagicPro\DomainModel\ORM\EntityManagerInterface;
 use MagicPro\Messenger\Handler\MessageHandlerInterface;
 use payment\Domain\Entity\Identity\OrderUuid;
 use payment\Domain\Entity\Identity\PackageId;
@@ -29,7 +29,7 @@ class CreateSnapshotCommandHandler implements MessageHandlerInterface
         private OrderRepositoryInterface      $orderRepo,
         private PackageRepositoryInterface    $packageRepo,
         private PromoOfferRepositoryInterface $promoOfferRepo,
-        private TransactionInterface          $transaction,
+        private EntityManagerInterface        $entityManager,
     ) {
     }
 
@@ -103,7 +103,7 @@ class CreateSnapshotCommandHandler implements MessageHandlerInterface
             $order->setPromoOffer($promoOfferId);
         }
         $order->setAddParams($command->userEmail, $command->addParam, $command->article);
-        $this->transaction->persist($order);
+        $this->entityManager->persist($order);
 
         return $order->uuid();
     }
