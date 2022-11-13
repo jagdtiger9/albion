@@ -2,6 +2,7 @@
 
 namespace Aljerom\Albion\Infrastructure\Controllers;
 
+use App\Application\FrameworkConfig;
 use MagicPro\Config\Config;
 use MagicPro\Http\Api\ErrorResponse;
 use MagicPro\Http\Api\SuccessResponse;
@@ -155,8 +156,8 @@ class WebApi extends Controller
     public function actionResetPasswordDiscord(ServerRequestInterface $request, $id, $albionName): ResponseInterface
     {
         try {
-            $config = Config::get('common');
-            $serverName = $config->scheme . '://' . $config->SERVER_NAME;
+            $config = \app(FrameworkConfig::class);
+            $serverName = $config->getScheme() . '://' . $config->getServerName();
             $memberPassword = new MemberPassword(Config::get('albion'), $serverName);
             $accessCredentials = $memberPassword->discordReset($id, $albionName);
 

@@ -8,7 +8,7 @@ use Aljerom\Albion\Domain\Exception\AlbionException;
 
 class Event extends Model
 {
-    public const REGISTRATION_TTL = 3 * 60 * 60;
+    public const REGISTRATION_TTL = 24 * 60 * 60;
 
     public const TYPE_ZVZ = 'zvz';
 
