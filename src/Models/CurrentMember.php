@@ -2,9 +2,9 @@
 
 namespace Aljerom\Albion\Models;
 
-use MagicPro\Contracts\User\CurrentUserInterface;
 use Aljerom\Albion\Models\Repository\GuildRepository;
 use Aljerom\Albion\Models\Repository\MemberRepository;
+use MagicPro\Contracts\User\CurrentUserInterface;
 
 class CurrentMember
 {

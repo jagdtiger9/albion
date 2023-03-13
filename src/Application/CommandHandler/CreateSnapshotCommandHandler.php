@@ -2,9 +2,10 @@
 
 namespace Aljerom\Albion\Application\CommandHandler;
 
+use Aljerom\Albion\Application\Command\CreateSnapshotCommand;
 use App\DomainModel\ValueObject\Price;
 use MagicPro\Contracts\Session\SessionInterface;
-use MagicPro\Contracts\User\CurrentUserInterface;
+use MagicPro\Contracts\User\SessionUserInterface;
 use MagicPro\DomainModel\ORM\EntityManagerInterface;
 use MagicPro\Messenger\Handler\MessageHandlerInterface;
 use payment\Domain\Entity\Identity\OrderUuid;
@@ -19,17 +20,16 @@ use payment\Domain\Exception\PaymentException;
 use payment\Domain\Repository\OrderRepositoryInterface;
 use payment\Domain\Repository\PackageRepositoryInterface;
 use payment\Domain\Repository\PromoOfferRepositoryInterface;
-use Aljerom\Albion\Application\Command\CreateSnapshotCommand;
 
 class CreateSnapshotCommandHandler implements MessageHandlerInterface
 {
     public function __construct(
-        private SessionInterface              $session,
-        private CurrentUserInterface          $user,
-        private OrderRepositoryInterface      $orderRepo,
-        private PackageRepositoryInterface    $packageRepo,
+        private SessionInterface $session,
+        private SessionUserInterface $user,
+        private OrderRepositoryInterface $orderRepo,
+        private PackageRepositoryInterface $packageRepo,
         private PromoOfferRepositoryInterface $promoOfferRepo,
-        private EntityManagerInterface        $entityManager,
+        private EntityManagerInterface $entityManager,
     ) {
     }
 

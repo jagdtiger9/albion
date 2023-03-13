@@ -2,10 +2,10 @@
 
 namespace Aljerom\Albion\Domain\Service;
 
-use MagicPro\Contracts\User\CurrentUserInterface;
 use Aljerom\Albion\Domain\Entity\ReadModel\PlayerDTO;
 use Aljerom\Albion\Domain\Exception\AlbionException;
 use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
+use MagicPro\Contracts\User\SessionUserInterface;
 use sessauth\Domain\Models\User;
 
 class PlayerPrivilege
@@ -36,9 +36,9 @@ class PlayerPrivilege
 
     public function __construct(
         ReadPlayerRepositoryInterface $readPlayerRepository,
-        CurrentUserInterface          $user
+        SessionUserInterface $user
     ) {
-        if (null === $player = $readPlayerRepository->findByUser($user)) {
+        if (null === $player = $readPlayerRepository->findByUserLogin($user->login())) {
             throw new AlbionException('Недостаточно прав для выполнения операции', 405);
         }
         $this->user = $user;

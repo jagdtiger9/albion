@@ -2,13 +2,12 @@
 
 namespace Aljerom\Albion\Infrastructure\Persistence\MySQL;
 
-use MagicPro\Contracts\Database\DatabaseNewInterface;
 use Aljerom\Albion\Domain\Entity\ReadModel\GuildDTO;
-use Aljerom\Albion\Domain\Entity\ReadModel\PlayerDTO;
-use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
 use Aljerom\Albion\Domain\Entity\ReadModel\PlayerAchievementsDTO;
+use Aljerom\Albion\Domain\Entity\ReadModel\PlayerDTO;
 use Aljerom\Albion\Domain\Entity\ReadModel\PlayerRolesDTO;
-use sessauth\Domain\Models\User;
+use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
+use MagicPro\Contracts\Database\DatabaseNewInterface;
 
 class ReadPlayerRepository implements ReadPlayerRepositoryInterface
 {
@@ -19,12 +18,12 @@ class ReadPlayerRepository implements ReadPlayerRepositoryInterface
         $this->database = $database;
     }
 
-    public function findByUser(User $user): ?PlayerDTO
+    public function findByUserLogin(string $login): ?PlayerDTO
     {
         $list = $this->database->select()
             ->columns(['player.*', 'user.login'])
             ->from('albion__members as player')
-            ->where('player.name', $user->login())
+            ->where('player.name', $login)
             ->fetchAll();
         if (!$list) {
             return null;

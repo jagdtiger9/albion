@@ -2,16 +2,21 @@
 
 namespace Aljerom\Albion\Infrastructure\Controllers;
 
-use App\Application\FrameworkConfig;
-use MagicPro\Config\Config;
-use MagicPro\Http\Api\ErrorResponse;
-use MagicPro\Http\Api\SuccessResponse;
-use payment\Domain\Entity\ValueObject\Award;
 use Aljerom\Albion\Application\ApiResource\AwardListApi;
 use Aljerom\Albion\Application\ApiResource\CreateSnapshotApi;
 use Aljerom\Albion\Application\ApiResource\PlayerAchievementsApi;
 use Aljerom\Albion\Application\ApiResource\SetAchievementApi;
+use Aljerom\Albion\Domain\Exception\AlbionException;
 use Aljerom\Albion\Models\EventMember;
+use Aljerom\Albion\Models\MemberArchive;
+use Aljerom\Albion\Models\Privilege\EventPrivilege;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Repository\EventMemberRepository;
+use Aljerom\Albion\Models\Repository\EventRepository;
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
+use Aljerom\Albion\Services\AlbionApi;
+use Aljerom\Albion\Services\AlbionImport;
 use Aljerom\Albion\Services\DiscordRegistration;
 use Aljerom\Albion\Services\EventMemberRegistration;
 use Aljerom\Albion\Services\EventRegistration;
@@ -19,24 +24,18 @@ use Aljerom\Albion\Services\EventStat;
 use Aljerom\Albion\Services\GuildPlayer;
 use Aljerom\Albion\Services\MemberInGameStat;
 use Aljerom\Albion\Services\MemberPassword;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use MagicPro\Application\Controller;
-use Aljerom\Albion\Domain\Exception\AlbionException;
-use Aljerom\Albion\Models\MemberArchive;
-use Aljerom\Albion\Models\Repository\EventMemberRepository;
-use Aljerom\Albion\Models\Repository\EventRepository;
-use Aljerom\Albion\Models\Repository\GuildRepository;
-use Aljerom\Albion\Models\Repository\MemberRepository;
-use Aljerom\Albion\Services\AlbionApi;
-use Aljerom\Albion\Services\AlbionImport;
-use Aljerom\Albion\Models\Privilege\EventPrivilege;
-use Aljerom\Albion\Models\Privilege\MemberPrivilege;
-use RuntimeException;
+use App\Application\FrameworkConfig;
 use DateTime;
 use Exception;
 use InvalidArgumentException;
-use sessauth\Services\Authentication;
+use MagicPro\Application\Controller;
+use MagicPro\Config\Config;
+use MagicPro\Http\Api\ErrorResponse;
+use MagicPro\Http\Api\SuccessResponse;
+use payment\Domain\Entity\ValueObject\Award;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use RuntimeException;
 use Throwable;
 
 class WebApi extends Controller
@@ -206,13 +205,13 @@ class WebApi extends Controller
 
     public function actionEditEvent(
         ServerRequestInterface $request,
-                               $id,
-                               $name,
-                               $type,
-                               $startDate,
-                               $startTime,
-                               $isMandatory,
-                               $factor
+        $id,
+        $name,
+        $type,
+        $startDate,
+        $startTime,
+        $isMandatory,
+        $factor
     ): ResponseInterface {
         try {
             $event = (new EventRegistration())
@@ -277,13 +276,13 @@ class WebApi extends Controller
 
     public function actionDiscordEditEvent(
         ServerRequestInterface $request,
-                               $messageId,
-                               $userId,
-                               $name,
-                               $type,
-                               $time,
-                               $isMandatory,
-                               $factor
+        $messageId,
+        $userId,
+        $name,
+        $type,
+        $time,
+        $isMandatory,
+        $factor
     ): ResponseInterface {
         try {
             $time = $time ? : time();
@@ -651,13 +650,17 @@ class WebApi extends Controller
         return $this->setApiResponse($request, $apiResponse);
     }
 
-    public function actionDiscordModeratorLogin(ServerRequestInterface $request, $loginHash, $redirectUri, $discordModeratorId): ResponseInterface
-    {
+    public function actionDiscordModeratorLogin(
+        ServerRequestInterface $request,
+        $loginHash,
+        $redirectUri,
+        $discordModeratorId
+    ): ResponseInterface {
         $discordRegistration = new DiscordRegistration(Config::get('albion'));
         if (null !== $user = $discordRegistration->getHashLoginUser($loginHash, $discordModeratorId)) {
-            $auth = new Authentication($user);
-            $auth->setAutoLogin($this->response);
-            $auth->initSession();
+//            $auth = new Authentication($user);
+//            $auth->setAutoLogin($this->response);
+//            $auth->initSession();
         }
 
         return $this->response->redirect(urldecode($redirectUri));

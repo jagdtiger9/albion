@@ -4,15 +4,14 @@ namespace Aljerom\Albion\Domain\Repository;
 
 use Aljerom\Albion\Domain\Entity\ReadModel\PlayerAchievementsDTO;
 use Aljerom\Albion\Domain\Entity\ReadModel\PlayerDTO;
-use sessauth\Domain\Models\User;
 
 interface ReadPlayerRepositoryInterface
 {
     /**
-     * @param User $user
+     * @param string $login
      * @return PlayerDTO|null
      */
-    public function findByUser(User $user): ?PlayerDTO;
+    public function findByUserLogin(string $login): ?PlayerDTO;
 
     /**
      * @param array $criteria

@@ -2,9 +2,6 @@
 
 namespace Aljerom\Albion\Application\CommandHandler;
 
-use InvalidArgumentException;
-use MagicPro\Messenger\Handler\MessageHandlerInterface;
-use payment\Domain\Entity\ValueObject\Award;
 use Aljerom\Albion\Application\Command\SetAchievementCommand;
 use Aljerom\Albion\Domain\Entity\Identity\PlayerId;
 use Aljerom\Albion\Domain\Entity\PlayerReward;
@@ -12,6 +9,9 @@ use Aljerom\Albion\Domain\Exception\AlbionException;
 use Aljerom\Albion\Domain\Repository\PlayerRepositoryInterface;
 use Aljerom\Albion\Domain\Repository\PlayerRewardRepositoryInterface;
 use Aljerom\Albion\Domain\Service\PlayerPrivilege;
+use InvalidArgumentException;
+use MagicPro\Messenger\Handler\MessageHandlerInterface;
+use payment\Domain\Entity\ValueObject\Award;
 
 class SetAchievementCommandHandler implements MessageHandlerInterface
 {
@@ -31,8 +31,8 @@ class SetAchievementCommandHandler implements MessageHandlerInterface
     private $playerRewardRepo;
 
     public function __construct(
-        PlayerPrivilege                 $privilege,
-        PlayerRepositoryInterface       $playerRepo,
+        PlayerPrivilege $privilege,
+        PlayerRepositoryInterface $playerRepo,
         PlayerRewardRepositoryInterface $playerRewardRepo
     ) {
         $this->privilege = $privilege;

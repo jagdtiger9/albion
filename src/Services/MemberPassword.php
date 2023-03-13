@@ -2,18 +2,18 @@
 
 namespace Aljerom\Albion\Services;
 
-use InvalidArgumentException;
-use MagicPro\Config\Config;
 use Aljerom\Albion\Domain\Exception\AlbionException;
 use Aljerom\Albion\Models\Dto\AccessCredentials;
 use Aljerom\Albion\Models\Member;
 use Aljerom\Albion\Models\Privilege\MemberPrivilege;
 use Aljerom\Albion\Models\Repository\GuildRepository;
 use Aljerom\Albion\Models\Repository\MemberRepository;
+use InvalidArgumentException;
+use MagicPro\Config\Config;
 use RestCord\DiscordClient;
 use RuntimeException;
+use sessauth\Application\Service\InstantHashLogin;
 use sessauth\Domain\Models\User;
-use sessauth\Services\Authentication;
 use sessauth\Services\UserMod\Create;
 
 class MemberPassword
@@ -103,9 +103,7 @@ class MemberPassword
                 throw new InvalidArgumentException('Игрок (' . $albionName . ') не найден', 11);
             }
             if ((int)$player->discordId !== $id) {
-                throw new InvalidArgumentException(
-                    'Игровой ник ' . $albionName . ' не привязан к Вашему дискорду', 13
-                );
+                throw new InvalidArgumentException('Игровой ник ' . $albionName . ' не привязан к Вашему дискорду', 13);
             }
         } else {
             $player = (new MemberRepository())->getMainByDiscord($id);
@@ -133,7 +131,7 @@ class MemberPassword
                 'confirmHash' => '',
             ];
             $modUser = new Create();
-            $modUser->autoPass()->noCheckEmail()->create($params);
+            $modUser->emptyPass()->noCheckEmail()->create($params);
             $password = $modUser->plainPassword();
         } else {
             $password = $user->requestNewPass();
@@ -142,7 +140,8 @@ class MemberPassword
             }
         }
         $player->setActive();
-        $instantLoginUrl = (new Authentication($user))->getInstantLoginUrl('', self::HASH_LOGIN_TTL);
+        $instantLoginUrl = app(InstantHashLogin::class)
+            ->getInstantLoginUrl($user->uid(), $user->login(), self::HASH_LOGIN_TTL);
 
         return new AccessCredentials($player->getField('name'), $password, $instantLoginUrl);
     }
