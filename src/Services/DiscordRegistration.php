@@ -2,10 +2,6 @@
 
 namespace Aljerom\Albion\Services;
 
-use Exception;
-use GuzzleHttp\Command\Exception\CommandClientException;
-use InvalidArgumentException;
-use MagicPro\Config\Config;
 use Aljerom\Albion\Domain\Exception\AlbionException;
 use Aljerom\Albion\Models\Member;
 use Aljerom\Albion\Models\MemberRoles;
@@ -14,9 +10,14 @@ use Aljerom\Albion\Models\Repository\DiscordRegistrationRepository;
 use Aljerom\Albion\Models\Repository\GuildRepository;
 use Aljerom\Albion\Models\Repository\LoginHashRepository;
 use Aljerom\Albion\Models\Repository\MemberRepository;
+use App\DomainModel\ValueObject\LoginVO;
+use Exception;
+use GuzzleHttp\Command\Exception\CommandClientException;
+use InvalidArgumentException;
+use MagicPro\Config\Config;
+use MagicPro\Contracts\User\UserInterface;
 use RestCord\DiscordClient;
-use sessauth\Domain\Models\Repository\UserRepository;
-use sessauth\Domain\Models\User;
+use sessauth\Domain\Repository\UserRepositoryInterface;
 
 class DiscordRegistration
 {
@@ -90,7 +91,7 @@ class DiscordRegistration
         );
     }
 
-    public function getHashLoginUser($hash, $discordModeratorId): ?User
+    public function getHashLoginUser($hash, $discordModeratorId): ?UserInterface
     {
         if (null === $member = (new MemberRepository())->getDiscordOfficer($discordModeratorId)) {
             return null;
@@ -102,7 +103,7 @@ class DiscordRegistration
             return null;
         }
 
-        return (new UserRepository())->getByLogin($member->name);
+        return app(UserRepositoryInterface::class)->getByLogin(new LoginVO($member->name));
     }
 
     /**

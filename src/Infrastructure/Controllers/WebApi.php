@@ -657,7 +657,7 @@ class WebApi extends Controller
         $discordModeratorId
     ): ResponseInterface {
         $discordRegistration = new DiscordRegistration(Config::get('albion'));
-        if (null !== $user = $discordRegistration->getHashLoginUser($loginHash, $discordModeratorId)) {
+        if (null !== $discordRegistration->getHashLoginUser($loginHash, $discordModeratorId)) {
 //            $auth = new Authentication($user);
 //            $auth->setAutoLogin($this->response);
 //            $auth->initSession();
