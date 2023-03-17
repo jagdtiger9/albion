@@ -11,8 +11,8 @@
  * ADD INDEX `discordId` (`discordId`);
  */
 
-use dumpsite\Models\Dump;
 use Aljerom\Albion\Models\EventMember;
+use common\Application\Service\Dump;
 
 $sql = " CREATE TABLE IF NOT EXISTS `albion__guilds` (
   `id` varchar(255) NOT NULL default '' COMMENT 'Идентификатор гильдии',
