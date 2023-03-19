@@ -8,12 +8,16 @@ use Aljerom\Albion\Models\Member;
 use Aljerom\Albion\Models\Privilege\MemberPrivilege;
 use Aljerom\Albion\Models\Repository\GuildRepository;
 use Aljerom\Albion\Models\Repository\MemberRepository;
+use App\DomainModel\ValueObject\LoginVO;
 use InvalidArgumentException;
 use MagicPro\Config\Config;
+use MagicPro\DomainModel\ORM\EntityManagerInterface;
+use MagicPro\Event\EventDispatcherInterface;
 use RestCord\DiscordClient;
-use RuntimeException;
+use sessauth\Application\Event\NewUserCredentialRegistered;
 use sessauth\Application\Service\InstantHashLogin;
-use sessauth\Domain\Models\User;
+use sessauth\Domain\Repository\UserRepositoryInterface;
+use sessauth\Domain\Service\SecretString;
 use sessauth\Services\UserMod\Create;
 
 class MemberPassword
@@ -123,22 +127,25 @@ class MemberPassword
      */
     private function resetPassword(Member $player): AccessCredentials
     {
+        $userRepo = app(UserRepositoryInterface::class);
+        $eventDispatcher = app(EventDispatcherInterface::class);
+        $secret = app(SecretString::class);
         $login = $player->getField('name');
-        if (null === $user = User::where('login', $login)->first()) {
-            $params = [
-                'login' => $login,
-                'active' => 1,
-                'confirmHash' => '',
-            ];
-            $modUser = new Create();
-            $modUser->emptyPass()->noCheckEmail()->create($params);
-            $password = $modUser->plainPassword();
+        if (null === $user = $userRepo->getByLogin(new LoginVO($login))) {
+            $event = new NewUserCredentialRegistered(
+                login: $login,
+                isActivated: true,
+            );
+            $eventDispatcher->dispatch($event);
+            $user = $event->getUser();
+            $password = $user->setNewPass($secret);
         } else {
-            $password = $user->requestNewPass();
-            if (false === $user->save()) {
-                throw new RuntimeException($user->lastError());
-            }
+            $password = $user->setNewPass($secret);
         }
+        $em = app(EntityManagerInterface::class);
+        $em->persist($user);
+        $em->run();
+
         $player->setActive();
         $instantLoginUrl = app(InstantHashLogin::class)
             ->getInstantLoginUrl($user->uid(), $user->login(), self::HASH_LOGIN_TTL);

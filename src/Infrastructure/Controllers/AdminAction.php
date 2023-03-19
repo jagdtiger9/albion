@@ -2,17 +2,18 @@
 
 namespace Aljerom\Albion\Infrastructure\Controllers;
 
+use Aljerom\Albion\Models\Repository\GuildRepository;
+use Aljerom\Albion\Models\Repository\MemberRepository;
+use App\DomainModel\ValueObject\LoginVO;
+use Exception;
+use InvalidArgumentException;
+use MagicPro\Application\Controller;
+use MagicPro\Database\Exception\DbException;
 use MagicPro\Http\Api\ErrorResponse;
 use MagicPro\Http\Api\SuccessResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use MagicPro\Application\Controller;
-use MagicPro\Database\Exception\DbException;
-use Exception;
-use InvalidArgumentException;
-use Aljerom\Albion\Models\Repository\GuildRepository;
-use Aljerom\Albion\Models\Repository\MemberRepository;
-use sessauth\Domain\Models\User;
+use sessauth\Domain\Repository\UserRepositoryInterface;
 use sessauth\Services\UserRemove;
 
 class AdminAction extends Controller
@@ -41,8 +42,10 @@ class AdminAction extends Controller
         return $this->setApiResponse($request, $apiResponse->withRedirect());
     }
 
-    public function actionDelMember(ServerRequestInterface $request): ResponseInterface
-    {
+    public function actionDelMember(
+        ServerRequestInterface $request,
+        UserRepositoryInterface $userRepo,
+    ): ResponseInterface {
         $requestParams = $request->getQueryParams();
         try {
             if (!($id = $requestParams['id'])) {
@@ -54,7 +57,7 @@ class AdminAction extends Controller
             }
 
             $login = $player->getField('name');
-            if (null === $user = User::where('login', $login)->first()) {
+            if (null === $user = $userRepo->getByLogin(new LoginVO($login))) {
                 throw new InvalidArgumentException('У данного игрока нет привязанной учетной записи');
             }
             (new UserRemove($user))->remove();
