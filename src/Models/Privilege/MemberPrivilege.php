@@ -5,7 +5,7 @@ namespace Aljerom\Albion\Models\Privilege;
 use Aljerom\Albion\Models\CurrentMember;
 use Aljerom\Albion\Models\Guild;
 use Aljerom\Albion\Models\Member;
-use sessauth\Domain\Models\User;
+use MagicPro\Contracts\User\SessionUserInterface;
 
 class MemberPrivilege
 {
@@ -15,7 +15,7 @@ class MemberPrivilege
     protected $member;
 
     /**
-     * @var User
+     * @var SessionUserInterface
      */
     protected $user;
 
@@ -56,7 +56,7 @@ class MemberPrivilege
         return $this->member;
     }
 
-    public function getUser(): ?User
+    public function getUser(): SessionUserInterface
     {
         return $this->user;
     }

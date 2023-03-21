@@ -6,7 +6,6 @@ use Aljerom\Albion\Domain\Entity\ReadModel\PlayerDTO;
 use Aljerom\Albion\Domain\Exception\AlbionException;
 use Aljerom\Albion\Domain\Repository\ReadPlayerRepositoryInterface;
 use MagicPro\Contracts\User\SessionUserInterface;
-use sessauth\Domain\Models\User;
 
 class PlayerPrivilege
 {
@@ -19,9 +18,6 @@ class PlayerPrivilege
      */
     protected $player;
 
-    /**
-     * @var User
-     */
     protected $user;
 
     /**
@@ -53,11 +49,6 @@ class PlayerPrivilege
     public function getPlayer(): ?PlayerDTO
     {
         return $this->player;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
     }
 
     public function isGM(): bool

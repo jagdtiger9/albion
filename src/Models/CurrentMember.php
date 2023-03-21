@@ -4,7 +4,7 @@ namespace Aljerom\Albion\Models;
 
 use Aljerom\Albion\Models\Repository\GuildRepository;
 use Aljerom\Albion\Models\Repository\MemberRepository;
-use MagicPro\Contracts\User\CurrentUserInterface;
+use MagicPro\Contracts\User\SessionUserInterface;
 
 class CurrentMember
 {
@@ -20,11 +20,11 @@ class CurrentMember
      */
     private $guild;
 
-    public function __construct(CurrentUserInterface $user)
+    public function __construct(SessionUserInterface $user)
     {
         $this->user = $user;
         if ($this->user->uid()) {
-            $this->member = (new MemberRepository())->getBy('name', $user->getField('login'));
+            $this->member = (new MemberRepository())->getBy('name', $user->login());
             if ($this->member && $guildId = $this->member->getField('guildId')) {
                 $this->guild = (new GuildRepository())->getById($guildId);
             }
@@ -36,7 +36,7 @@ class CurrentMember
         return $this->member;
     }
 
-    public function getUser()
+    public function getUser(): SessionUserInterface
     {
         return $this->user;
     }

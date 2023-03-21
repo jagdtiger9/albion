@@ -2,8 +2,8 @@
 
 namespace Aljerom\Albion\Models;
 
+use MagicPro\Contracts\User\SessionUserInterface;
 use MagicPro\Database\Model\Model;
-use sessauth\Domain\Models\User;
 
 class DiscordRegistration extends Model
 {
@@ -44,10 +44,10 @@ class DiscordRegistration extends Model
         return $this;
     }
 
-    public function confirm(User $user)
+    public function confirm(SessionUserInterface $user)
     {
         $this->confirm_at = time();
-        $this->moderator = $user->uid;
+        $this->moderator = $user->uid();
 
         return $this;
     }
