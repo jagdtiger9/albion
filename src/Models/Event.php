@@ -2,9 +2,9 @@
 
 namespace Aljerom\Albion\Models;
 
-use MagicPro\Database\Model\Model;
-use MagicPro\Tools\Uuid;
 use Aljerom\Albion\Domain\Exception\AlbionException;
+use MagicPro\Database\Model\Model;
+use MagicPro\Tools\Random\RandomToken;
 
 class Event extends Model
 {
@@ -93,7 +93,7 @@ class Event extends Model
             $this->created_at = time();
         }
         if (!$this->linkHash) {
-            $this->linkHash = Uuid::create()->binUuid();
+            $this->linkHash = RandomToken::string();
         }
 
         return parent::save();
