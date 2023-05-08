@@ -30,12 +30,12 @@ class EventStat extends AbstractViewHelper
             'from' => [
                 'value' => 0,
                 'comment' => 'Начало период формирования статистики',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'to' => [
                 'value' => 0,
                 'comment' => 'Конец периода формирования статистики',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'mandatory' => [
                 'value' => 0,

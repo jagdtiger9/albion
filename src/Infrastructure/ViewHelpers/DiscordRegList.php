@@ -2,11 +2,11 @@
 
 namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
-use MagicPro\View\ViewHelper\AbstractViewHelper;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
 use Aljerom\Albion\Models\Repository\DiscordRegistrationRepository;
 use Aljerom\Albion\Models\Repository\GuildRepository;
-use Aljerom\Albion\Models\Privilege\MemberPrivilege;
 use Aljerom\Albion\Models\Repository\MemberRepository;
+use MagicPro\View\ViewHelper\AbstractViewHelper;
 
 class DiscordRegList extends AbstractViewHelper
 {
@@ -20,7 +20,7 @@ class DiscordRegList extends AbstractViewHelper
             'guildName' => [
                 'value' => '',
                 'comment' => 'Идентификатор гильдии',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'filter' => [
                 'value' => 'all',

@@ -2,17 +2,18 @@
 
 namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
-use MagicPro\View\ViewHelper\AbstractViewHelper;
-use Exception;
+use Aljerom\Albion\Models\CurrentMember;
 use Aljerom\Albion\Models\Member;
+use Aljerom\Albion\Models\Privilege\MemberPrivilege;
 use Aljerom\Albion\Models\Repository\GuildRepository;
 use Aljerom\Albion\Models\Repository\MemberArchiveRepository;
 use Aljerom\Albion\Models\Repository\MemberDailyRepository;
 use Aljerom\Albion\Models\Repository\MemberRepository;
-use Aljerom\Albion\Models\CurrentMember;
-use Aljerom\Albion\Models\Privilege\MemberPrivilege;
 use DateInterval;
 use DateTime;
+use Exception;
+use MagicPro\View\ViewHelper\AbstractViewHelper;
+
 use function app;
 
 class PlayerInfo extends AbstractViewHelper
@@ -32,22 +33,22 @@ class PlayerInfo extends AbstractViewHelper
             'userId' => [
                 'value' => '',
                 'comment' => 'Идентификатор игрока',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'userName' => [
                 'value' => '',
                 'comment' => 'Имя игрока',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'from' => [
                 'value' => 0,
                 'comment' => 'Начало период формирования статистики',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'to' => [
                 'value' => 0,
                 'comment' => 'Конец периода формирования статистики',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
         ];
     }

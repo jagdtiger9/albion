@@ -17,12 +17,12 @@ class GuildList extends AbstractViewHelper
             'guildId' => [
                 'value' => '',
                 'comment' => 'Идентификатор гильдии',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'guildName' => [
                 'value' => '',
                 'comment' => 'Название гильдии',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
         ];
     }

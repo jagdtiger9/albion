@@ -2,13 +2,13 @@
 
 namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
-use MagicPro\View\ViewHelper\AbstractViewHelper;
 use Aljerom\Albion\Models\Event;
 use Aljerom\Albion\Models\EventMember;
 use Aljerom\Albion\Models\Guild;
 use Aljerom\Albion\Models\Privilege\EventPrivilege;
 use Aljerom\Albion\Models\Repository\EventMemberRepository;
 use Aljerom\Albion\Models\Repository\EventRepository;
+use MagicPro\View\ViewHelper\AbstractViewHelper;
 
 class EventInfo extends AbstractViewHelper
 {
@@ -27,7 +27,7 @@ class EventInfo extends AbstractViewHelper
             'hash' => [
                 'value' => 0,
                 'comment' => 'Уникальнй хеш ативности',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
         ];
     }

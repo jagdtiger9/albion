@@ -35,7 +35,7 @@ return [
         'params' => [
             'id' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Идентификатор пользователя'
             ],
             'role' => [
@@ -56,7 +56,7 @@ return [
         'params' => [
             'id' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Идентификатор пользователя'
             ],
         ],
@@ -77,7 +77,7 @@ return [
             ],
             'albionName' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Имя пользователя в albion'
             ],
         ],
@@ -92,7 +92,7 @@ return [
         'params' => [
             'name' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Название гильдии'
             ],
         ],
@@ -107,12 +107,12 @@ return [
         'params' => [
             'id' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'ID активности для редактирования'
             ],
             'name' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Название активности'
             ],
             'type' => [
@@ -122,12 +122,12 @@ return [
             ],
             'startDate' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Дата начала события'
             ],
             'startTime' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Время начала события'
             ],
             'isMandatory' => [
@@ -153,7 +153,7 @@ return [
         'params' => [
             'id' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'ID удаляемой активности'
             ],
         ],
@@ -173,7 +173,7 @@ return [
             ],
             'role' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Роль участника события'
             ],
         ],
@@ -193,7 +193,7 @@ return [
             ],
             'memberId' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Идентификатор участника, если не задан - текущий пользователь',
             ],
         ],
@@ -213,7 +213,7 @@ return [
             ],
             'memberId' => [
                 'value' => '',
-                'filter' => FILTER_SANITIZE_STRING,
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
                 'comment' => 'Идентификатор участника',
             ],
         ],

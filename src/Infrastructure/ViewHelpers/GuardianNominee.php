@@ -2,11 +2,11 @@
 
 namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
+use Aljerom\Albion\Models\GuardianNominee as GuardianNomineeModel;
+use Aljerom\Albion\Models\Repository\GuildRepository;
 use DateTime;
 use Exception;
 use MagicPro\View\ViewHelper\AbstractViewHelper;
-use Aljerom\Albion\Models\Repository\GuildRepository;
-use Aljerom\Albion\Models\GuardianNominee as GuardianNomineeModel;
 
 class GuardianNominee extends AbstractViewHelper
 {
@@ -20,12 +20,12 @@ class GuardianNominee extends AbstractViewHelper
             'guildName' => [
                 'value' => '',
                 'comment' => 'Идентификатор гильдии',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'to' => [
                 'value' => '',
                 'comment' => 'Дата начала выводимой истории',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
         ];
     }

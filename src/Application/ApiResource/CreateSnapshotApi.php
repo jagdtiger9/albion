@@ -34,7 +34,7 @@ STR;
     /**
      * @inheritDoc
      */
-    public function isAuthRequired(): bool
+    public function isAuthorizationRequired(): bool
     {
         return true;
     }

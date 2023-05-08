@@ -20,7 +20,7 @@ class Search extends AbstractViewHelper
             'name' => [
                 'value' => '',
                 'comment' => 'Имя игрока, название гильдии',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
         ];
     }

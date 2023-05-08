@@ -2,9 +2,7 @@
 
 namespace Aljerom\Albion\Models\Dto;
 
-use MagicPro\DomainModel\Dto\Dto;
-
-class AccessCredentials implements Dto
+class AccessCredentials
 {
     /**
      * @var string

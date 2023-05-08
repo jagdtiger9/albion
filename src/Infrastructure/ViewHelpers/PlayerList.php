@@ -2,10 +2,11 @@
 
 namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
-use MagicPro\Contracts\Session\FlashInterface;
-use MagicPro\View\ViewHelper\AbstractViewHelper;
 use Aljerom\Albion\Domain\Exception\AlbionException;
 use Aljerom\Albion\Services\GuildPlayer;
+use MagicPro\Contracts\Session\FlashInterface;
+use MagicPro\View\ViewHelper\AbstractViewHelper;
+
 use function app;
 
 class PlayerList extends AbstractViewHelper
@@ -20,7 +21,7 @@ class PlayerList extends AbstractViewHelper
             'guildName' => [
                 'value' => '',
                 'comment' => 'Идентификатор гильдии',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'page' => [
                 'value' => 0,
@@ -35,7 +36,7 @@ class PlayerList extends AbstractViewHelper
             'sort' => [
                 'value' => 'name',
                 'comment' => 'Поле сортировки списка',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'order' => [
                 'value' => 'asc',
@@ -45,12 +46,12 @@ class PlayerList extends AbstractViewHelper
             'from' => [
                 'value' => '',
                 'comment' => 'Дата начала периода',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
             'to' => [
                 'value' => '',
                 'comment' => 'Дата конца периода',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
         ];
     }

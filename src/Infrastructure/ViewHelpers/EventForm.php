@@ -2,11 +2,11 @@
 
 namespace Aljerom\Albion\Infrastructure\ViewHelpers;
 
-use MagicPro\View\ViewHelper\AbstractViewHelper;
 use Aljerom\Albion\Models\Event;
 use Aljerom\Albion\Models\Privilege\EventPrivilege;
-use Aljerom\Albion\Models\Repository\EventRepository;
 use Aljerom\Albion\Models\Privilege\MemberPrivilege;
+use Aljerom\Albion\Models\Repository\EventRepository;
+use MagicPro\View\ViewHelper\AbstractViewHelper;
 
 class EventForm extends AbstractViewHelper
 {
@@ -20,7 +20,7 @@ class EventForm extends AbstractViewHelper
             'id' => [
                 'value' => '',
                 'comment' => 'Идентификатор события',
-                'filter' => FILTER_SANITIZE_STRING
+                'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
             ],
         ];
     }
