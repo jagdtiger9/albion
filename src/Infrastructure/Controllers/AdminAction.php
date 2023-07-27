@@ -7,6 +7,7 @@ use Aljerom\Albion\Models\Repository\MemberRepository;
 use App\DomainModel\ValueObject\LoginVO;
 use Exception;
 use InvalidArgumentException;
+use MagicPro\Application\Context\RequestContextInterface;
 use MagicPro\Application\Controller;
 use MagicPro\Database\Exception\DbException;
 use MagicPro\Http\Api\ErrorResponse;
@@ -18,11 +19,11 @@ use sessauth\Services\UserRemove;
 
 class AdminAction extends Controller
 {
-    public function actionDelGuild(ServerRequestInterface $request): ResponseInterface
+    public function actionDelGuild(ServerRequestInterface $request, RequestContextInterface $context): ResponseInterface
     {
         try {
             $repository = new GuildRepository();
-            if (false !== $uid = $request->Get('id')) {
+            if (false !== $uid = $context->getVeryUglyOldGet('id')) {
                 if (null === $guild = $repository->getById($uid)) {
                     throw new InvalidArgumentException('Гильдия с указанным идентификатором не найдена');
                 }

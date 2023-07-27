@@ -227,7 +227,7 @@ class WebApi extends Controller
 
             $status = 1;
             $message = 'Активность успешно ' . ($id ? 'изменена' : 'создана');
-            if ($redirect_an = $request->Post('redirect_an', '')) {
+            if ($redirect_an = $request->getParsedBody()['redirect_an'] ?? '') {
                 $redirectUrl = '/' . $redirect_an . '/' . $event->getField('linkHash');
             } else {
                 $urlChunks = parse_url($request->getServerParams()['HTTP_REFERER'] ?? '');
